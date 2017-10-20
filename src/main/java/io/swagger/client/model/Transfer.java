@@ -23,6 +23,8 @@ public class Transfer  {
   private Date created = null;
   private Object metadata = null;
   private String locationHeader;
+  private String individualAchId = null;
+
 
 
   
@@ -111,6 +113,19 @@ public class Transfer  {
 
   
 
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  @JsonProperty("individualAchId")
+  public String getIndividualAchId() {
+    return individualAchId;
+  }
+  public void setIndividualAchId(String individualAchId) {
+    this.individualAchId = individualAchId;
+  }
+
+
+
 
   /**
    * Used to deserialize Location field in
@@ -133,6 +148,7 @@ public class Transfer  {
     sb.append("  amount: ").append(amount).append("\n");
     sb.append("  created: ").append(created).append("\n");
     sb.append("  metadata: ").append(metadata).append("\n");
+    sb.append("  individualAchId: ").append(individualAchId).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
